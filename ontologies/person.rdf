@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#"
-     xml:base="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf"
+<rdf:RDF xmlns="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#"
+     xml:base="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:person="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#"
+     xmlns:person="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf">
         <rdfs:comment>An example of ontology</rdfs:comment>
         <rdfs:label>Person Ontology</rdfs:label>
     </owl:Ontology>
@@ -25,12 +25,12 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#know -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#know -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#know">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#know">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Person"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Person"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Person"/>
     </owl:ObjectProperty>
     
 
@@ -46,37 +46,37 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#age -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#age -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#age">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Human"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#age">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Human"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#firstname -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#firstname -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#firstname">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Person"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#firstname">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#genre -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#genre -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#genre">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Human"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#genre">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Human"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#lastName -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#lastName -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#lastName">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Person"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#lastName">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -93,48 +93,48 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Human -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Human -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Human">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Person"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Human">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Person"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Man -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Man -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Man">
+    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Man">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Human"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Human"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#genre"/>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#genre"/>
                         <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</owl:hasValue>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Woman"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Woman"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Person -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Person -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Person"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Person"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Woman -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Woman -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Woman">
+    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Woman">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Human"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Human"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#genre"/>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#genre"/>
                         <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</owl:hasValue>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -155,10 +155,10 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Herbert -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Herbert -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Herbert">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Human"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Herbert">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Human"/>
         <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</age>
         <firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Herbert</firstname>
         <genre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</genre>
@@ -167,11 +167,11 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Selma -->
+    <!-- https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Selma -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Selma">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Human"/>
-        <know rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/person.rdf#Herbert"/>
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Selma">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Human"/>
+        <know rdf:resource="https://raw.githubusercontent.com/eric-azevedo/mestrado/master/ontologies/person.rdf#Herbert"/>
         <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</age>
         <firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Selma</firstname>
         <genre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</genre>
