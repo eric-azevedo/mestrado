@@ -71,7 +71,7 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasAunt">
         <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasAunts"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Aunt"/>
     </owl:ObjectProperty>
     
@@ -80,7 +80,8 @@
     <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasAunts -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasAunts">
-        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNephews"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Aunts"/>
     </owl:ObjectProperty>
     
@@ -102,6 +103,7 @@
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasParent"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Parent"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Child"/>
+        <owl:propertyDisjointWith rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasSibling"/>
     </owl:ObjectProperty>
     
 
@@ -110,6 +112,8 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasDaughter">
         <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasChild"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Daughter"/>
     </owl:ObjectProperty>
     
 
@@ -136,11 +140,42 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNephew -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNephew">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNephews"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Aunts"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephew"/>
+        <owl:propertyDisjointWith rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNiece"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNephews -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNephews">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Aunts"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNiece -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNiece">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasNephews"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Aunts"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Niece"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasParent -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasParent">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Child"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Parent"/>
+        <owl:propertyDisjointWith rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasSibling"/>
     </owl:ObjectProperty>
     
 
@@ -149,8 +184,8 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasSibling">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Sibling"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Sibling"/>
     </owl:ObjectProperty>
     
 
@@ -179,7 +214,7 @@
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasUncle">
         <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasAunts"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Uncle"/>
     </owl:ObjectProperty>
     
@@ -328,6 +363,46 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephew -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephew">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Man"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Niece -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Niece">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Woman"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Nephews"/>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Parent -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Parent">
@@ -440,7 +515,9 @@
     <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Herbe -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Herbe">
-        <hasBrother rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Homer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <hasNephew rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Bart"/>
+        <foaf:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</foaf:gender>
     </owl:NamedIndividual>
     
 
@@ -459,7 +536,16 @@
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Lisa">
         <rdf:type rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-        <hasBrother rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Bart"/>
+        <hasParent rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Homer"/>
+        <foaf:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</foaf:gender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Marge -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Marge">
+        <hasChild rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Lisa"/>
         <foaf:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</foaf:gender>
     </owl:NamedIndividual>
     
@@ -473,6 +559,18 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#p1">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -484,8 +582,308 @@
     </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If person has sibling man else this sibling is a brother</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasSibling"/>
+                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#p"/>
+                                <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Man"/>
+                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasBrother"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#p"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasSibling"/>
+                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#p"/>
+                                <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Woman"/>
+                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasSister"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#p"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasChild"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Man"/>
+                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasFather"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasChild"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Man"/>
+                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasSon"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If x has child y and x is woman else y has mother x</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasChild"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Woman"/>
+                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasMother"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasChild"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#Woman"/>
+                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#hasDaughter"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/eric-azevedo/ontologies/master/genealogy.rdf#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If the parents have brothers then the brothers are the uncles of the parents&apos; children</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parentsBrothers</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S0</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
